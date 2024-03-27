@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Square } from '../components/Square';
+import { ClickedButton } from '../components/ClickedButton';
 
 export const Board = () => {
-    const [inputNumber, setInputNumber] = useState<string | number>('버튼을 클릭해주세요');
+    const [ButtonNumberStr, setButtonNumberStr] = useState<string>('버튼을 클릭해주세요');
 
     const buttonClicked = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        setInputNumber(event.currentTarget.textContent ?? 'click button please');
+        setButtonNumberStr(event.currentTarget.textContent ?? 'click button please');
     };
 
     return (
         <>
-            <div style={{ minWidth: '250px' }}>clicked number: {inputNumber}</div>
+            <ClickedButton ButtonNumberStr={ButtonNumberStr} />
             <div className='board-row'>
                 <Square value={1} buttonClicked={buttonClicked} />
                 <Square value={2} buttonClicked={buttonClicked} />
