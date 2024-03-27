@@ -1,18 +1,16 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  /* padding: 2rem; */
-  /* text-align: center; */
+    max-width: 1280px;
+    margin: 0 auto;
+    /* padding: 2rem; */
+    /* text-align: center; */
 }
 
 .board-row {
-
-  display: flex;
-
-  /* width: 80px;
-  min-width: 80px !important;
-  height: 80px;
-  min-height: 80px !important; */
-
+    display: flex;
 }
 
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
