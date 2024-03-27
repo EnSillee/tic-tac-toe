@@ -1,9 +1,21 @@
-interface SquareProps {
-    value: number;
-    buttonClicked: React.MouseEventHandler<HTMLButtonElement>;
-}
+// interface SquareProps {
+//     value: number;
+//     ButtonNumberStr: string,
+//     buttonClicked: React.MouseEventHandler<HTMLButtonElement>;
+// }
 
-export const Square = ({ value, buttonClicked }: SquareProps) => {
-    
-    return <button className='square' onClick={buttonClicked}>{value}</button>;
+import { useState } from 'react';
+
+export const Square = () => {
+    const [value, setValue] = useState<null | string>(null);
+
+    function handleClick() {
+        setValue('x');
+    }
+
+    return (
+        <button className='square' onClick={handleClick}>
+            {value}
+        </button>
+    );
 };
