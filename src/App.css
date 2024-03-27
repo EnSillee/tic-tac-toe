@@ -10,9 +10,9 @@
 }
 
 .board-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: '100%' !important;
 }
 
@@ -28,4 +28,12 @@
     align-items: center;
     padding: 15px 0px;
     font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
 }
