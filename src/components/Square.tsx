@@ -4,9 +4,6 @@ interface SquareProps {
 }
 
 export const Square = ({ value, onSquareClick }: SquareProps) => {
-    // function handleClick() {
-    //     setValue('x');
-    // }
 
     return (
         <button className='square' onClick={onSquareClick}> 

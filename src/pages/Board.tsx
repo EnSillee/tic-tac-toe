@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Square } from '../components/Square';
+import { Restart } from '../components/Restart';
 import { calculateWinner } from '../utils/calculateWinner';
 
 export const Board = () => {
@@ -15,6 +16,11 @@ export const Board = () => {
 
         setSquares(nextSquares);
         setXIsNext(!xIsNext);
+    }
+
+    function handleRestartClick() {
+        setSquares(Array(9).fill(null));
+        setXIsNext(true);
     }
 
     console.log(squares);
@@ -45,6 +51,8 @@ export const Board = () => {
                 <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
                 <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
             </div>
+
+            {winner ? <Restart onRestartClick={handleRestartClick} /> : null}
         </>
     );
 };
