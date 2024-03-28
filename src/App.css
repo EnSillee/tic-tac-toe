@@ -36,4 +36,20 @@
     justify-content: center;
     align-items: center;
     margin-top: 15px;
+
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 3s; /* Opera */
+}
+
+
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
