@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Square } from '../components/Square';
 import { Restart } from '../components/Restart';
 import { calculateWinner } from '../utils/calculateWinner';
@@ -23,14 +23,17 @@ export const Board = () => {
         setXIsNext(true);
     }
 
-    console.log(squares);
-
     const winner = calculateWinner(squares);
+
     let status;
     if (winner) {
         status = `Winner: ${winner}`;
     } else {
-        status = `Next Player: ${xIsNext ? 'X' : 'O'}`;
+        if (squares.indexOf(null) === -1) {
+            status = 'Tie Game';
+        } else {
+            status = `Next Player: ${xIsNext ? 'X' : 'O'}`;
+        }
     }
 
     return (
@@ -52,7 +55,7 @@ export const Board = () => {
                 <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
             </div>
 
-            {winner ? <Restart onRestartClick={handleRestartClick} /> : null}
+            {winner || (status === 'Tie Game' && <Restart onRestartClick={handleRestartClick} />)}
         </>
     );
 };
