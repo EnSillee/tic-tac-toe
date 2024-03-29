@@ -3,10 +3,7 @@
     margin: 0 auto;
 
     min-width: 260px;
-    min-height: 430px;
-
-    /* padding: 2rem; */
-    /* text-align: center; */
+    min-height: 600px;
 }
 
 .board-row {
@@ -27,7 +24,7 @@
     justify-content: center;
     align-items: center;
     padding: 15px 0px;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 900;
 }
 
@@ -43,9 +40,54 @@
     -o-animation: fadein 3s; /* Opera */
 }
 
+@media (min-width: 576px) {
+    #root {
+        max-width: 1280px;
+        margin: 0 auto;
 
+        min-width: 260px;
+        min-height: 1025px;
 
-@-webkit-keyframes fadein { /* Safari and Chrome */
+        /* padding: 2rem; */
+        /* text-align: center; */
+    }
+    .board-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: '100%' !important;
+    }
+
+    .square {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0px;
+        font-size: 3rem;
+        font-weight: 900;
+    }
+
+    .restart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+
+        animation: fadein 3s;
+        -moz-animation: fadein 3s; /* Firefox */
+        -webkit-animation: fadein 3s; /* Safari and Chrome */
+        -o-animation: fadein 3s; /* Opera */
+    }
+}
+
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
   from {
       opacity: 0;
   }
